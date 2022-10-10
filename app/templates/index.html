@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>student:</h1><a href="{% url 'app_two:add' %}">Add</a>
+    <br>
+    <hr>
+    {% for j in stu %}
+        ID: {{j.id}}
+        <br>name: {{j.name}}
+        <br>address: {{j.address}}
+        <br>marks: {{j.marks}}
+        <br><a href="{% url 'app_two:delete' j.id %}">delete</a>
+        <br><a href="{% url 'app_two:edit' j.id %}">Edit</a>
+        <br><a href="{% url 'app_one:show' j.id %}">show in new page</a>
+        <hr>
+    {% endfor %}
+    <hr>
+    <a href="{% url 'app_two:home' %}">Go to app two</a>
+
+</body>
+</html>
